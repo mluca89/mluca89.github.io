@@ -8,8 +8,8 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overscroll-behavior: none; /* Prevent scroll bounce */
-  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  overflow: hidden;
   font-family: "Calligraphy", Arial, sans-serif;
   background: #f4f4f4;
   text-align: center;
