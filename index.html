@@ -301,27 +301,6 @@ For any additional questions, please feel free to reach out to us!<br>
 
 </script>
 
-<script>
-  document.addEventListener('touchstart', function (e) {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const touchStartY = e.touches[0].clientY;
-
-    // Only add the move listener if user is near the bottom
-    if (scrollY + windowHeight >= docHeight - 2) {
-      const onMove = function(ev) {
-        const touchMoveY = ev.touches[0].clientY;
-        const up = touchMoveY < touchStartY;
-        if (up) {
-          ev.preventDefault(); // Block upward scroll past bottom
-        }
-        document.removeEventListener('touchmove', onMove);
-      };
-      document.addEventListener('touchmove', onMove, { passive: false });
-    }
-  }, { passive: true });
-</script>
 
    </div>
 </body>
