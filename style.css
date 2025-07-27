@@ -8,18 +8,11 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overscroll-behavior-y: contain;
-  overflow: hidden;
   font-family: "Calligraphy", Arial, sans-serif;
   background: #f4f4f4;
   text-align: center;
 }
-.scroll-container {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* Keeps momentum scrolling */
-  height: calc(100vh - 160px); /* Adjust if header + footer are different */
-  padding-bottom: 20px;
-}
+
 
 .header-title {
   font-size: 2em;
