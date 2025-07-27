@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Cinzel:wght@400..900&family=Great+Vibes&family=Homemade+Apple&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inspiration&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Merienda:wght@300..900&family=Oooh+Baby&family=Space+Grotesk:wght@300..700&display=swap');
+
 main p {
   margin-top: 0;
   margin-bottom: 0;
@@ -18,16 +18,12 @@ body {
   background: #f4f4f4;
   text-align: center;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 body.menu-open {
   overflow: hidden;
-}
-
-.main-background {
-  position: relative;
-  padding: 20px;
-  z-index: 1;
 }
 
 .background-layer {
@@ -36,12 +32,18 @@ body.menu-open {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: -1;
   background-image: url("images/sunset_tablet.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
+}
+
+.main-background {
+  position: relative;
+  padding: 80px 20px 20px;
+  z-index: 2;
 }
 
 .overlay-box {
@@ -59,9 +61,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
   top: 0;
-  z-index: 2;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-controls {
@@ -73,7 +78,12 @@ header {
 .header-controls img {
   width: 30px;
   height: 20px;
+  margin-right: 30px;
   cursor: pointer;
+  border: 1px solid #ccc;        
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  border-radius: 3px;               
+  background-color: white;        
 }
 
 .language-menu {
@@ -102,7 +112,7 @@ header {
 }
 
 .our-image {
-    width: 100%;
+  width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
   background-image: url("images/us.jpg");
@@ -112,7 +122,6 @@ header {
   background-color: transparent;
   transition: height 0.4s ease-in-out, background-size 0.4s ease-in-out;
 }
-
 
 .space {
   font-size: 2.8em;
@@ -130,6 +139,7 @@ header {
   font-family: 'Inspiration';
   margin-bottom: 5px;
 }
+
 .savedate {
   font-size: 1.3em;
   font-family: 'Josefin Slab';
@@ -143,13 +153,14 @@ header {
   font-family: 'Oooh Baby';
   margin-bottom: 30px;
 }
+
 .location-link {
   text-decoration: none;
-  color: inherit; /* Inherits text color from surrounding element */
+  color: inherit;
 }
 
 .location-link:hover {
-  text-decoration: underline; /* Optional hover effect */
+  text-decoration: underline;
 }
 
 .map-icon {
@@ -188,7 +199,6 @@ nav.desktop-nav {
   font-size: 1em;
   font-family: 'Baskervville',sans-serif;
   gap: 15px;
- 
 }
 
 nav.mobile-links-static {
@@ -210,7 +220,6 @@ footer {
   position: relative;
 }
 
-
 @keyframes slideDown {
   from { margin-top: -100%; opacity: 0; }
   to { margin-top: 100px; opacity: 1; }
@@ -221,22 +230,21 @@ footer {
   to { margin-top: -100%; opacity: 0; }
 }
 
-
 @media (min-width: 760px) {
   .mobile-links-static,
   .overlay {
     display: none !important;
   }
-    .our-image {
+  .our-image {
     height: 500px;
   }
-    nav.desktop-nav {
-    gap: 60px; 
+  nav.desktop-nav {
+    gap: 60px;
   }
-
 }
+
 @media (max-width: 760px) {
- .background-layer {
+  .background-layer {
     background-image: url("images/sunset_long.png");
   }
 
@@ -252,7 +260,7 @@ footer {
     font-size: 2em;
   }
 
-    .language-menu {
+  .language-menu {
     right: 5px;
     top: 50px;
     padding: 5px;
@@ -263,15 +271,12 @@ footer {
     width: 25px;
     height: 18px;
   }
-
 }
-
 
 button {
   border-radius: 10px;
   min-width: 10px;
 }
-
 
 .desc-with-image {
   display: flex;
@@ -293,35 +298,9 @@ button {
   text-align: right;
 }
 
-.menu-link {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-.travel-link {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.hotel-link {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-
+.menu-link,
+.travel-link,
+.hotel-link,
 .faq-link {
   background: none;
   border: none;
