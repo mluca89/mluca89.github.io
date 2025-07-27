@@ -315,3 +315,7 @@ button {
   cursor: pointer;
   text-decoration: none;
 }
+
+html, body {
+  overscroll-behavior-y: contain;
+}
