@@ -301,7 +301,31 @@ For any additional questions, please feel free to reach out to us!<br>
 
 </script>
 
+<script>
+// Run this after DOM is loaded
+window.addEventListener('load', () => {
+  const footer = document.querySelector('footer');
+  if (!footer) return;
 
+  let maxScroll; // max scrollTop to prevent bouncing
+
+  function updateMaxScroll() {
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    maxScroll = docHeight - winHeight;
+  }
+
+  updateMaxScroll();
+  window.addEventListener('resize', updateMaxScroll);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > maxScroll) {
+      window.scrollTo(0, maxScroll);
+    }
+  }, { passive: true });
+});
+
+</script>
    </div>
 </body>
 </html>
