@@ -61,9 +61,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: static;
+  position: relative;
   top: 0;
-  z-index: 2000;
+  z-index: 2;
 }
 
 .header-controls {
@@ -208,6 +208,8 @@ footer {
   color: white;
   padding: 20px 10px;
   font-size: 0.9em;
+  z-index: 2;
+  position: relative;
 }
 
 
