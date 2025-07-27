@@ -212,23 +212,17 @@ Your love and support are more than enough. That said, if you'd like to contribu
 <br><br>
 <div class="iban-box">
 <b>Beneficiary:</b>
-<span id="copy-name" class="copy-text">Ciccio Pasticcio</span>
-<button onclick="copyText('copy-name')" aria-label="Copy Name" title="Copy to clipboard">
-  <img src="images/copy.svg" alt="Copy icon" style="width:20px; height:20px; vertical-align: middle;">
-</button>
-<br>
+Luca Mastrota & Natalia Sayed
+<br><br>
 
 <b>IBAN:</b>
-<span id="copy-iban" class="copy-text">IT0011223344 055</span>
-<button onclick="copyText('copy-iban')" aria-label="Copy IBAN" title="Copy to clipboard">
-  <img src="images/copy.svg" alt="Copy icon" style="width:20px; height:20px; vertical-align: middle;">
-</button>
+IT88 H036 6901 6004 0335 5296 055
 <br><br>
 
 
-<b>SWIFT/BIC:</b> REVOITM2 <br>
-<b>Bank Name:</b> Revolut Bank UAB <br>
-<b>Currency:</b> Euro
+<b>SWIFT/BIC:</b> REVOITM2 <br><br>
+<b>Bank Name:</b> Revolut Bank UAB <br><br>
+<b>Currency:</b> Euro <br>
 </div>
 <br><br>
 <b>What's the best way to reach you if I have additional questions?</b><br>
@@ -326,56 +320,6 @@ For any additional questions, please feel free to reach out to us!<br>
 
 </script>
 
-<script>
-  function copyText(elementId) {
-  var textElement = document.getElementById(elementId);
-  if (!textElement) {
-    alert('Text element not found!');
-    return;
-  }
-  var textToCopy = textElement.textContent.trim();
-
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(textToCopy).then(function() {
-      alert('Copied: ' + textToCopy);
-    }, function(err) {
-      alert('Failed to copy: ' + err);
-    });
-  } else {
-    // fallback for older browsers
-    var textArea = document.createElement('textarea');
-    textArea.value = textToCopy;
-    textArea.style.position = 'fixed';  // avoid scrolling
-    textArea.style.top = 0;
-    textArea.style.left = 0;
-    textArea.style.width = '2em';
-    textArea.style.height = '2em';
-    textArea.style.padding = 0;
-    textArea.style.border = 'none';
-    textArea.style.outline = 'none';
-    textArea.style.boxShadow = 'none';
-    textArea.style.background = 'transparent';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-      var successful = document.execCommand('copy');
-      if (successful) {
-        alert('Copied: ' + textToCopy);
-      } else {
-        alert('Fallback: unable to copy');
-      }
-    } catch (err) {
-      alert('Fallback: unable to copy');
-    }
-
-    document.body.removeChild(textArea);
-  }
-}
-
-
-</script>
 
    </div>
 </body>
