@@ -104,6 +104,7 @@ header {
 .language-menu {
   position: absolute;
   top: 60px;
+  right: 1px;
   margin-right: 38px;
   background: white;
   flex-direction: column;
@@ -118,7 +119,7 @@ header {
 .language-menu img {
   width: 30px;
   height: 20px;
-  margin: 5px;
+  margin: 15px;
   cursor: pointer;
 }
 
@@ -275,17 +276,6 @@ footer {
     font-size: 2em;
   }
 
-  .language-menu {
-    right: 5px;
-    top: 50px;
-    padding: 5px;
-    gap: 5px;
-  }
-
-  .language-menu img {
-    width: 25px;
-    height: 18px;
-  }
 }
 
 button {
