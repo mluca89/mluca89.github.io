@@ -301,31 +301,6 @@ For any additional questions, please feel free to reach out to us!<br>
 
 </script>
 
-<script>
-  // Prevent iOS rubberband bounce at top/bottom
-  document.addEventListener('touchstart', function (e) {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const touchStartY = e.touches[0].clientY;
-
-    document.addEventListener('touchmove', function handler(ev) {
-      const touchMoveY = ev.touches[0].clientY;
-      const up = touchMoveY < touchStartY;
-      const down = touchMoveY > touchStartY;
-
-      const atTop = scrollY <= 0;
-      const atBottom = scrollY + windowHeight >= docHeight - 1;
-
-      if ((atTop && down) || (atBottom && up)) {
-        ev.preventDefault();
-      }
-
-      document.removeEventListener('touchmove', handler);
-    }, { passive: false });
-  }, { passive: true });
-</script>
-
 
    </div>
 </body>
