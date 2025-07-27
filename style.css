@@ -4,6 +4,16 @@ main p {
   margin-top: 0;
   margin-bottom: 0;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overscroll-behavior: none; /* Prevent scroll bounce */
+  overflow-x: hidden;
+  font-family: "Calligraphy", Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+}
 
 .header-title {
   font-size: 2em;
@@ -314,8 +324,4 @@ button {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-}
-
-html, body {
-  overscroll-behavior-y: contain;
 }
