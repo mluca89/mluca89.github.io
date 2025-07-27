@@ -30,20 +30,18 @@ body.menu-open {
   z-index: 1;
 }
 
-body::before {
-  content: "";
+.background-layer {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 0;
   background-image: url("images/sunset_tablet.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  z-index: -1;
+  background-position: center;
   pointer-events: none;
-  
 }
 
 .overlay-box {
@@ -238,7 +236,7 @@ footer {
 
 }
 @media (max-width: 760px) {
-  body::before {
+ .background-layer {
     background-image: url("images/sunset_long.png");
   }
 
