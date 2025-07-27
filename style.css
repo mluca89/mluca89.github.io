@@ -30,18 +30,20 @@ body.menu-open {
   z-index: 1;
 }
 
-.main-background::before {
+body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: url("images/sunset_tablet.png");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center center;
   z-index: -1;
+  pointer-events: none;
+  
 }
 
 .overlay-box {
@@ -220,7 +222,7 @@ footer {
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 760px) {
   .mobile-links-static,
   .overlay {
     display: none !important;
@@ -233,9 +235,9 @@ footer {
   }
 
 }
-@media (max-width: 500px) {
-  .main-background {
-  background-image: url("images/sunset_long.png");
+@media (max-width: 760px) {
+  body::before {
+    background-image: url("images/sunset_long.png");
   }
 
   .name {
